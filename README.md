@@ -23,3 +23,13 @@ code and question prompts can be found under the corresponding files
   * To achieve this, we can call the contribute() function in the console with an arbitrary value larger than 0.001 ether,
  	then we can transfer and arbitrary amount again to claim the ownership. To reduce its balance to zero, we can simply use
  	contract.withdraw().
+
+### 2. Fallout
+Exaplanation:
+
+* There's a typo in the contract constructor.
+
+Solution:
+
+ * In the console, simply create an instance of the contract. 
+ 
