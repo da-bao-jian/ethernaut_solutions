@@ -1,5 +1,5 @@
 # Ethernaut CTF Solutions
-code and question prompt can be found under the corresponding files
+code and question prompts can be found under the corresponding files
 
 ### 1.Fallback
  Explanation:
