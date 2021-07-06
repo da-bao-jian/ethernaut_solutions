@@ -6,8 +6,8 @@ code and question prompts can be found under the corresponding files
  
  * As the name indicates, fallback function is used to serve as a 'fallback' solution for receiving ether when
  the sender do not know your ABI. Typically, it is called when a non-existent function is called on the contract.
- It has no argument, nor name. Most importantly, it requires "payable" marker. Because of fallback function's public nature, 
- it opens up a backdoor for outside world. When the fallback function involves logic of changin the ownership, it could be
+ It has no argument, nor name. Most importantly, it requires a "payable" marker. Because of fallback function's public nature, 
+ it could open up a backdoor for the outside world. When the fallback function involves logic of changin the ownership, it could be
  a recipe for disaster. This is exactly what's going on here.  
 
  Solution:
