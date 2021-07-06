@@ -32,4 +32,17 @@ Exaplanation:
 Solution:
 
  * In the console, simply create an instance of the contract. 
- 
+
+### 3.Coin Flip
+Explanation:
+
+* In this problem, the source of randomness depends on the blockhash of the previous block and a fix variable 'FACTOR', which is obtained by:
+	    
+	    uint256 blockValue = uint256(blockhash(block.number.sub(1)));
+	    uint256 coinFlip = blockValue.div(FACTOR);
+	    
+* However, blockhash of the previous block and FACTOR are easily assesible from another contract because the flip() function includes both. 
+
+Solution:
+
+* To exploit the vulnerability, we can write an attack contract that get an instance of the CoinFlip contract and uses the flip() function with the same input variables. Since the attacking contract will be using the same blockhash and FACTOR, it could correctly predict the outcome of the flip.
