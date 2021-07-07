@@ -36,7 +36,7 @@ Solution:
 ### 3.Coin Flip
 Explanation:
 
-* In this problem, the source of randomness depends on the blockhash of the previous block and a fix variable 'FACTOR', which is obtained by:
+* In this problem, the source of randomness depends on the blockhash of the previous block and a fixed variable 'FACTOR', which are obtained by:
 	    
 	    uint256 blockValue = uint256(blockhash(block.number.sub(1)));
 	    uint256 coinFlip = blockValue.div(FACTOR);
