@@ -45,4 +45,4 @@ Explanation:
 
 Solution:
 
-* To exploit the vulnerability, we can write an attack contract that get an instance of the CoinFlip contract and uses the flip() function with the same input variables. Since the attacking contract will be using the same blockhash and FACTOR, it could correctly predict the outcome of the flip.
+* To exploit the vulnerability, we can write an attack contract that get an instance of the CoinFlip contract and use the flip() function with the same input variables. Since the attacking contract will be using the same blockhash and FACTOR, it could correctly predict the outcome of the flip.
