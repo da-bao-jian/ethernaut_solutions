@@ -60,3 +60,10 @@ Explanation:
 
 Solution:
  * In the console, call the `transfer()` function with a random address and 21 to cause underflow. 
+
+ ### 6. Delegation
+ Explanation:
+  * `delegatecall` is a low level function similar to `call`. The difference is that when a contrat `delegatecall` another contract, the storage used ties to the calling contract. For instance, contract caller calls contract A, and contract A executes `delegatecall` to contract B, `msg.sender` in B would still point to contract A caller. `delegatecall` is useful for updating intermediary contract's state after contract being depoyed onto the Etheruem network, yet it leaves the backdoor open for malicious attacks, especailly decoupled with poorly written fallback functions. 
+
+  Solution:
+  * Here, we can use `web3.utils.keccak256` to hash the `pwn()` function in the console, and pack the hashing result into the `sendTransaction` function as the value for `data` key. This way, we are able to trigger the fallback function in `Delegation` with function selector of `pwn()`. Because `pwn()` updates the owner to `msg.sender` and `Delegation` uses `delegatecall` in its fallback function, `Delegation`'s owner will be updated to the attacker. 
