@@ -46,3 +46,10 @@ Explanation:
 Solution:
 
 * To exploit the vulnerability, we can write an attack contract that get an instance of the CoinFlip contract and use the flip() function with the same input variables. Since the attacking contract will be using the same blockhash and FACTOR, it could correctly predict the outcome of the flip.
+
+### 4. Telephone
+Explanation:
+ * tx.origin is the original address that initiated the transaction while msg.sender is the most immediate contract/EOA. To change the address of the contract, the attacker can crreate a contract that calls `changeOwner` function. In this case, msg.sender would be the attacking contract whereas tx.origin would be the attacker's address. 
+
+Solution:
+ * Write an attacking contract that calls Telephone's `changeOwner` function. 
