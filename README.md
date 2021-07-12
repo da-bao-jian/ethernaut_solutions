@@ -56,7 +56,7 @@ Solution:
 
 ### 5. Token
 Explanation:
- * Solidity can handle up to 256 bit numbers (up to 2²⁵⁶-1), so incrementing 2**256-1 by 1 would result into 0. Conversely, decrementing 0 by 1 would result into 2**256-1. 
+ * Solidity can handle up to 256 bit numbers (up to 2²⁵⁶-1), so incrementing 2^256-1 by 1 would result into 0. Conversely, decrementing 0 by 1 would result into 2^256-1. 
 
 Solution:
  * In the console, call the `transfer()` function with a random address and 21 to cause underflow. 
