@@ -106,7 +106,7 @@ Explanation:
  Solution:
   * Here, we can write an attacking contract that deposit some ether into the victim contract to initialize its value in the `balance` mapping. Then, to deplete the contract balance, we call the `withdraw` method in attacking contract's fallback function to create the re-rentrance recursion. 
 Best Practice:
- * Avoid using `call` or `transfer` as they can break contracts. Use ![Checks-effects-interations pattern](https://docs.soliditylang.org/en/develop/security-considerations.html#use-the-checks-effects-interactions-pattern), ![Reentrancy Guard](https://docs.openzeppelin.com/contracts/2.x/api/utils#ReentrancyGuard), or ![PullPaymen](https://blog.openzeppelin.com/15-lines-of-code-that-could-have-prevented-thedao-hack-782499e00942/)
+ * Avoid using `call` or `transfer` as they can break contracts. Use [Checks-effects-interations pattern](https://docs.soliditylang.org/en/develop/security-considerations.html#use-the-checks-effects-interactions-pattern), [Reentrancy Guard](https://docs.openzeppelin.com/contracts/2.x/api/utils#ReentrancyGuard), or [PullPaymen](https://blog.openzeppelin.com/15-lines-of-code-that-could-have-prevented-thedao-hack-782499e00942/)
 
  ### 11. Elevator
  Explanation:
@@ -114,9 +114,11 @@ Best Practice:
 
 Solution:
    * To reach the top level, we need to toggle the return value of `isLastFloor` each time it is called. We can declare a variable and toggle its value between funciton calls: 
-	```
+	
+	
 	toggler = toggler == false ? true : false;
 	return toggler == false ?  true :  false;
-	```
+	
+
 Best Practice:
  * Using `view`	or `pure` modifiers to prevent state changing implementations. 
